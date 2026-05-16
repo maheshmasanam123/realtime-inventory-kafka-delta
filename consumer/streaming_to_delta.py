@@ -5,7 +5,7 @@ Two outputs:
   2. inventory_state   - MERGE-upserted current stock per (warehouse, sku)
 """
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, from_json, sum as _sum, window
+from pyspark.sql.functions import col, from_json, sum as _sum
 from pyspark.sql.types import (IntegerType, StringType, StructField, StructType,
                                TimestampType)
 from delta.tables import DeltaTable
