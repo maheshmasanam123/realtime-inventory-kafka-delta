@@ -1,0 +1,7 @@
+confluent-kafka>=2.4
+pyspark==3.5.1
+delta-spark==3.2.0
+streamlit>=1.32
+duckdb>=0.10
+pandas>=2.0
+pytest>=8.0
