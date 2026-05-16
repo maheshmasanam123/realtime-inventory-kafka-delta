@@ -26,6 +26,17 @@ The whole stack runs on `docker compose up` — no cloud account needed.
 
 ## Quick start
 
+**Zero-infra demo (pure Python, no Kafka):**
+```bash
+pip install pandas pyarrow
+python demo.py --events 10000
+```
+
+Runs the same upsert logic the Spark consumer applies, in memory. Expected
+output: distinct (warehouse, sku) pairs, total on-hand, top-5 SKUs, and any
+negative-stock alerts written to `data/state.parquet`.
+
+**Full Kafka + Spark + Streamlit flavor (Docker):**
 ```bash
 docker compose -f docker/docker-compose.yml up -d
 python producer/wms_event_producer.py --rate 50      # 50 events/sec
