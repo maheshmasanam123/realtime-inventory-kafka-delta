@@ -68,7 +68,7 @@ def main() -> None:
           f"({args.events / max(elapsed, 0.001):,.0f} events/s)")
     print(f"distinct (warehouse, sku) pairs: {len(df):,}")
     print(f"total on hand: {df['on_hand'].sum():,}")
-    print(f"\ntop 5 SKUs by on_hand:")
+    print("\ntop 5 SKUs by on_hand:")
     print(df.nlargest(5, "on_hand").to_string(index=False))
 
     neg = df[df["on_hand"] < 0]
